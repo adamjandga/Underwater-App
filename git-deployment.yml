@@ -5,10 +5,12 @@ metadata:
   labels:
     app: underwater
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: underwater
+        app: underwater
+  replicas: 3
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -17,6 +19,7 @@ spec:
       containers:
         - name: underwater
           image: 718511862771.dkr.ecr.us-east-1.amazonaws.com/underwater:latest
-          imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 80
+              protocol: TCP
+          imagePullPolicy: Always
