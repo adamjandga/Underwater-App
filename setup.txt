@@ -2,6 +2,4 @@ eksctl create cluster --name underwater --region us-east-1 --nodegroup-name unde
 
 aws ecr create-repository --repository-name underwater --region us-east-1
 
-kubectl get pods
-
-kubectl get service
+kubectl port-forward deployment/underwater  28015:80
