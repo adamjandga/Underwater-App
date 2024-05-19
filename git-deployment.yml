@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: underwater
+  name: underwater-app
   labels:
     app: underwater
 spec:
