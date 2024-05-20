@@ -50,4 +50,3 @@ jobs:
     - name: Deploy service
       run: |
         kubectl apply -f git-deployment.yml
-        kubectl port-forward deployment/underwater-app 28015:80
